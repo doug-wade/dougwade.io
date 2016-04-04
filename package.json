@@ -4,6 +4,7 @@
   "description": "My personal website",
   "main": "build/app.js",
   "scripts": {
+    "start": "gulp clean && gulp build && node build/app.js | bunyan",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

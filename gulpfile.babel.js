@@ -3,6 +3,7 @@ import cleanCSS from 'gulp-clean-css';
 import babel from 'gulp-babel';
 import del from 'del';
 import jade from 'gulp-jade';
+import rename from 'gulp-rename';
 import stylus from 'gulp-stylus';
 
 const paths = {
@@ -27,6 +28,9 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   return gulp.src(paths.server)
     .pipe(babel())
+    .pipe(rename((path) => {
+      path.basename = path.basename.split('.')[0]
+    }))
     .pipe(gulp.dest(paths.build))
 });
 

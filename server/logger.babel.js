@@ -1,7 +1,7 @@
 import bunyan from "bunyan";
 
 const bunyanOptions = {
-  name: "cia",
+  name: "dougwade.io",
   streams: [
     {
       level: "info",
