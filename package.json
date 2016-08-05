@@ -41,7 +41,7 @@
     "gulp-stylus": "^2.3.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.7.4",
+    "babel-polyfill": "^6.9.1",
     "bunyan": "^1.8.0",
     "koa": "^2.0.0",
     "koa-bunyan": "/Users/doug.wade/code/koa-bunyan",
