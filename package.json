@@ -24,7 +24,7 @@
   "homepage": "https://github.com/doug-wade/dougwade.io#readme",
   "private": true,
   "devDependencies": {
-    "babel-core": "^6.7.4",
+    "babel-core": "^6.17.0",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-regenerator": "^6.6.5",
     "babel-polyfill": "^6.7.4",
