@@ -1,4 +1,4 @@
-import bunyan from "bunyan";
+const bunyan = require("bunyan");
 
 const bunyanOptions = {
   name: "dougwade.io",
@@ -18,4 +18,4 @@ const bunyanOptions = {
   src: true
 };
 
-export default bunyan.createLogger(bunyanOptions);
+module.exports = bunyan.createLogger(bunyanOptions);

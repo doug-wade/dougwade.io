@@ -1,17 +1,17 @@
-import gulp from 'gulp';
-import cleanCSS from 'gulp-clean-css';
-import babel from 'gulp-babel';
-import del from 'del';
-import jade from 'gulp-jade';
-import rename from 'gulp-rename';
-import stylus from 'gulp-stylus';
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+const babel = require('gulp-babel');
+const del = require('del');
+const jade = require('gulp-jade');
+const rename = require('gulp-rename');
+const stylus = require('gulp-stylus');
 
 const paths = {
   build: 'build',
   public: 'public',
   server: 'server/*.js',
   styles: 'styles/*.styl',
-  views: 'views/*.jade'
+  views: 'views/*.pug'
 }
 
 gulp.task('clean', (cb) => {
