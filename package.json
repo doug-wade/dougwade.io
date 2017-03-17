@@ -49,6 +49,6 @@
     "koa-convert": "^1.2.0",
     "koa-router": "^5.4.0",
     "koa-static": "^3.0.0",
-    "request": "^2.69.0"
+    "request": "^2.78.0"
   }
 }
