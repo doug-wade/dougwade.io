@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "target": "ES2022",
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "components/*"
       ]
     },
     "lib": [
