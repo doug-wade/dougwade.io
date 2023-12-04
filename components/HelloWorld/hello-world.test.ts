@@ -1,5 +1,5 @@
 import { mount } from '@tybalt/test-utils';
-import HelloWorld from './hello-world';
+import HelloWorld from './hello-world.component';
 
 describe('HelloWorld', () => {
     it('renders', async () => {

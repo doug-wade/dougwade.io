@@ -8,6 +8,6 @@ export default defineComponent({
     css,
     props: { name: { validator: compose(string(), required) } },
     render({ name }) {
-        return html`<div class="hello-world">Hello ${name}</div>`;
+        return html`<dbw-typography variant="h1" class="hello-world">Welcome to ${name}!</dbw-typography>`;
     }
 });
