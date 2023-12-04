@@ -12,9 +12,7 @@ export default defineComponent({
                 <dbw-text-input name="email" label="Reply-To"></dbw-text-input>
                 <dbw-text-area name="message" label="Message"></dbw-text-area>
                 <dbw-button type="submit">
-                    <dbw-typography variant="body" slot="text">
-                        Send message
-                    </dbw-typography>
+                    Send message
                 </dbw-button>
             </form>
         `;

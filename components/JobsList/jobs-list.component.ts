@@ -5,28 +5,41 @@ export default defineComponent({
     setup() {
         const jobs = [
             {
-                name: 'Skilljar'
+                name: 'Skilljar',
+                url: ''
             },
             {
-                name: 'Indeed'
+                name: 'Indeed',
+                url: ''
             },
             {
-                name: 'Amazon'
+                name: 'Amazon',
+                url: ''
             },
             {
-                name: 'Epic'
+                name: 'Epic',
+                url: ''
             }
         ];
 
+        const jobsLis = jobs.map((job) => {
+            return html`
+                <li>
+                    <dbw-link href="${job.url}">${job.name}</dbw-link>
+                </li>
+            `;
+        });
+
         return {
-            jobs
+            jobsLis
         }
     },
-    render({ year }) {
+    render({ jobsLis }) {
         return html`
-            <footer>
-                © ${year} Douglas Wade 
-            </footer>
+            <dbw-typography variant="h3">Formerly of</dbw-typography>
+            <ul>
+                ${jobsLis} 
+            </ul>
         `;
     }
 });

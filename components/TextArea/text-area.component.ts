@@ -16,7 +16,7 @@ export default defineComponent({
         return html`
             <label>
                 <dbw-typography variant="body">${label}:</dbw-typography>
-                <text-area name="${name}"></text-area> 
+                <textarea name="${name}"></textarea> 
             </label>
         `;
     }

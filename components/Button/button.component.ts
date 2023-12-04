@@ -19,7 +19,7 @@ export default defineComponent({
     render({ type, variant }) {
         return html`
             <button type="${type}" class="btn btn-${variant}">
-                <slot name="text"></slot>
+                <dbw-typography tagName="span"><slot></slot></dbw-typography>
             </button>
         `;
     }
