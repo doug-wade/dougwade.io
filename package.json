@@ -7,7 +7,8 @@
   "scripts": {
     "build": "eleventy",
     "test": "tybalt test",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "watch": "eleventy --watch"
   },
   "keywords": [],
   "author": "Douglas Wade <douglas.b.wade@gmail.com>",

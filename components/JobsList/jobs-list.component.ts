@@ -1,27 +1,27 @@
 import { defineComponent, html } from '@tybalt/core';
 
+const jobs = [
+    {
+        name: 'Skilljar',
+        url: ''
+    },
+    {
+        name: 'Indeed',
+        url: ''
+    },
+    {
+        name: 'Amazon',
+        url: ''
+    },
+    {
+        name: 'Epic',
+        url: ''
+    }
+];
+
 export default defineComponent({
     name: 'dbw-jobs-list',
     setup() {
-        const jobs = [
-            {
-                name: 'Skilljar',
-                url: ''
-            },
-            {
-                name: 'Indeed',
-                url: ''
-            },
-            {
-                name: 'Amazon',
-                url: ''
-            },
-            {
-                name: 'Epic',
-                url: ''
-            }
-        ];
-
         const jobsLis = jobs.map((job) => {
             return html`
                 <li>
@@ -38,7 +38,7 @@ export default defineComponent({
         return html`
             <dbw-typography variant="h3">Formerly of</dbw-typography>
             <ul>
-                ${jobsLis} 
+                ${jobsLis.join('')} 
             </ul>
         `;
     }
