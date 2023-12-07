@@ -10,7 +10,7 @@ export default defineComponent({
     `,
     render() {
         return html`
-            <form>
+            <form name="contact" netlify>
                 <dbw-typography variant="h2">
                     Contact Me!
                 </dbw-typography>
