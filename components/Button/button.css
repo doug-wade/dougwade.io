@@ -1,7 +1,13 @@
 .btn {
-    color: white;
+    color: var(--color-white);
     padding: 8px;
-    background-color: rebeccapurple;
+    background-color: var(--color-primary);
     border-radius: 4px;
-    border: 1px black solid;
+    border: 1px var(--color-black) solid;
+}
+
+button.btn[disabled="true"] {
+    pointer-events: none;
+    background-color: var(--color-grey);
+    border: 1px var(--color-white) solid;
 }

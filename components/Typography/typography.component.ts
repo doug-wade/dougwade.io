@@ -20,6 +20,9 @@ const VARIANTS = {
     'body': {
         name: 'body',
         tagName: 'p'
+    },
+    'none': {
+        name: 'none'
     }
 };
 
