@@ -1,7 +1,8 @@
 textarea {
     width: 100%;
+    min-height: 200px;
 
-    &:invalid {
+    &.has-blurred:invalid {
         border: 1px solid red;
     }
 }

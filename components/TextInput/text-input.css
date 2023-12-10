@@ -2,7 +2,7 @@ input {
     width: 100%;
     line-height: 2;
 
-    &:invalid {
+    &.has-blurred:invalid {
         border: 1px solid red;
     }
 }

@@ -14,14 +14,16 @@
   "author": "Douglas Wade <douglas.b.wade@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@tybalt/core": "^0.0.20",
-    "@tybalt/validator": "^0.0.20"
+    "classnames": "^2.3.2",
+    "@tybalt/core": "^0.1.1",
+    "@tybalt/parser": "^0.1.1",
+    "@tybalt/validator": "^0.1.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@tybalt/cli": "^0.0.20",
-    "@tybalt/eleventy-plugin": "^0.0.20",
-    "@tybalt/test-utils": "^0.0.20",
+    "@tybalt/cli": "^0.1.1",
+    "@tybalt/eleventy-plugin": "^0.1.1",
+    "@tybalt/test-utils": "^0.1.1",
     "@types/jest": "^29.5.10",
     "typescript-plugin-css-modules": "^5.0.2"
   }

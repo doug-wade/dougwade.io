@@ -18,7 +18,7 @@ export default defineComponent({
                     welcome to dougwade.io
                 </div>
                 <div>
-                    ${links.map(link => `<a href=${link.href}>${link.text}</a>`).join(' ')}
+                    ${links.map(link => html`<dbw-link href=${link.href}>${link.text}</dbw-link> `)}
                 </div>
             </header>
         `;

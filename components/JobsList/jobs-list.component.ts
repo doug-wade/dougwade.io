@@ -3,19 +3,19 @@ import { defineComponent, html } from '@tybalt/core';
 const jobs = [
     {
         name: 'Skilljar',
-        url: ''
+        url: 'https://www.skilljar.com/'
     },
     {
         name: 'Indeed',
-        url: ''
+        url: 'https://www.indeed.com/'
     },
     {
         name: 'Amazon',
-        url: ''
+        url: 'https://www.amazon.com/'
     },
     {
         name: 'Epic',
-        url: ''
+        url: 'https://www.epic.com/'
     }
 ];
 
@@ -38,7 +38,7 @@ export default defineComponent({
         return html`
             <dbw-typography variant="h3">Formerly of</dbw-typography>
             <ul>
-                ${jobsLis.join('')} 
+                ${jobsLis} 
             </ul>
         `;
     }

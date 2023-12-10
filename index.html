@@ -12,12 +12,22 @@
         line-height: 1.75;
         font-size: 1.25em;
       }
+      /* design tokens */
+      :root {
+        --color-black: #000;
+        --color-white: #fff;
+        --color-grey: #9b9b9b;
+        --color-primary: rebeccapurple;
+        --color-secondary: #cdb4db;
+      }
     </style>
   </head>
   <body id="body">
     <dbw-header id="header"></dbw-header>
     <div class="body">
         <hello-world name="dougwade.io"></hello-world>
+        <dbw-open-source-projects-list></dbw-open-source-projects-list>
+        <dbw-press-list></dbw-press-list>
         <dbw-speaking-list></dbw-speaking-list>
         <dbw-jobs-list></dbw-jobs-list>
         <dbw-contact-form></dbw-contact-form>
