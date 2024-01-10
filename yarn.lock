@@ -785,14 +785,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tybalt/cli@portal:/Users/doug/code/tybalt/packages/cli::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/cli@portal:/Users/doug/code/tybalt/packages/cli::locator=dougwade.io%40workspace%3A."
+"@tybalt/cli@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/cli@npm:0.1.6"
   dependencies:
     "@chialab/esbuild-plugin-html": "npm:^0.17.2"
     "@swc/core": "npm:^1.3.102"
-    "@tybalt/esbuild-plugin": "workspace:^"
-    "@tybalt/eslint-plugin": "workspace:^"
+    "@tybalt/esbuild-plugin": "npm:^0.1.6"
+    "@tybalt/eslint-plugin": "npm:^0.1.6"
     "@types/glob": "npm:^8.0.1"
     browser-sync: "npm:^3.0.2"
     chalk: "npm:^5.2.0"
@@ -812,67 +812,76 @@ __metadata:
     typescript: "npm:^5.3.3"
   bin:
     tybalt: dist/index.js
+  checksum: 49bb08e6fef1e69d5079fffafff8e6e74d75cb2436e980a7ff7b1459af4769fd9cd115473b5a338457d848a1d9b5fcbcdc7edbd1f21a98db9f0dc54a5623adcf
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/core@portal:/Users/doug/code/tybalt/packages/core::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/core@portal:/Users/doug/code/tybalt/packages/core::locator=dougwade.io%40workspace%3A."
+"@tybalt/core@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/core@npm:0.1.6"
   dependencies:
-    "@tybalt/reactive": "workspace:^"
-    "@tybalt/validator": "workspace:^"
+    "@tybalt/reactive": "npm:^0.1.6"
+    "@tybalt/validator": "npm:^0.1.6"
+  checksum: 3fad3fb7eb267bc7a8024518121e5e217203e03c9578b33d3be77fdf223137a02bfdba76dd25b939614c7a0d7446ec283a66064eefcacbf0ca253b75b5461061
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/eleventy-plugin@portal:/Users/doug/code/tybalt/packages/eleventy-plugin::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/eleventy-plugin@portal:/Users/doug/code/tybalt/packages/eleventy-plugin::locator=dougwade.io%40workspace%3A."
+"@tybalt/eleventy-plugin@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/eleventy-plugin@npm:0.1.6"
   dependencies:
-    "@tybalt/esbuild-plugin": "workspace:^"
+    "@tybalt/esbuild-plugin": "npm:^0.1.6"
     esbuild: "npm:^0.19.10"
     glob: "npm:^10.3.10"
     jsdom: "npm:^23.2.0"
+  checksum: 0e26f0a6c9d36d7a953c87e093355b44177628b6ae22b1ceba63602c2c60b1b804c7a658e61495ae2521011c83a2b32cc3589b6ac2283ed233c857c4d5a96065
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/esbuild-plugin@portal:/Users/doug/code/tybalt/packages/esbuild-plugin::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/esbuild-plugin@portal:/Users/doug/code/tybalt/packages/esbuild-plugin::locator=dougwade.io%40workspace%3A."
+"@tybalt/esbuild-plugin@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/esbuild-plugin@npm:0.1.6"
+  checksum: 4ed37898792c39b686034a3baa75a11f2aa1dea6a9ce3c896250021ef70994673552c5b5e75dc63229cbcb636ff27f1235e0ba089c327bbbac0a89040a222c58
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/eslint-plugin@portal:/Users/doug/code/tybalt/packages/eslint-plugin::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/eslint-plugin@portal:/Users/doug/code/tybalt/packages/eslint-plugin::locator=dougwade.io%40workspace%3A."
+"@tybalt/eslint-plugin@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/eslint-plugin@npm:0.1.6"
+  checksum: 33c2b46b94ce49d314b686ebb41378647f0c33b7ac19d4da2cc83c93935dda17dcb16bad44b0f3ec6c7391ade850ebc7d065e0424dff09312c0dc1b7d2c2a71e
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/parser@portal:/Users/doug/code/tybalt/packages/parser::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/parser@portal:/Users/doug/code/tybalt/packages/parser::locator=dougwade.io%40workspace%3A."
+"@tybalt/parser@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/parser@npm:0.1.6"
+  checksum: 858ea563694506b54899c9ecb5a34ee9526ea729b5f857d7f5eaec1f751427094cd3cb1be573f3c80affb752e521899db3c3f5d24bb7df9f1b23a0575ee9d989
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/reactive@portal:/Users/doug/code/tybalt/packages/reactive::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/reactive@portal:/Users/doug/code/tybalt/packages/reactive::locator=dougwade.io%40workspace%3A."
+"@tybalt/reactive@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/reactive@npm:0.1.6"
+  checksum: dd6ebbb79e0cfd0eb0fa8c840316c23284d9d15c6f30e24183fc6f9dec6f55a5967be7c0b3cddace2c3c877a9d57fb8254018ee8a6ef20d46236fde2094073e6
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/test-utils@portal:/Users/doug/code/tybalt/packages/test-utils::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/test-utils@portal:/Users/doug/code/tybalt/packages/test-utils::locator=dougwade.io%40workspace%3A."
+"@tybalt/test-utils@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/test-utils@npm:0.1.6"
   dependencies:
     js-convert-case: "npm:^4.2.0"
     uuid: "npm:^9.0.1"
+  checksum: acf00693ddc90b9d52e5a556e8c17a7b5613d5786111886536f261b486e77eb051958c4534e335b968d7de0fd3ddb2752d8842025dfa2004f8ae6d731cc01211
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@tybalt/validator@portal:/Users/doug/code/tybalt/packages/validator::locator=dougwade.io%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@tybalt/validator@portal:/Users/doug/code/tybalt/packages/validator::locator=dougwade.io%40workspace%3A."
+"@tybalt/validator@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@tybalt/validator@npm:0.1.6"
+  checksum: dfdd8736455cdcd3fd955ece2a4d76dca216e237eea3aceb209e5a87bfc48fda6cfea09b9db8c35f9e9556140d16cb9e27cd7486f4860c3e547947c276a02f9e
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@types/cookie@npm:^0.4.1":
   version: 0.4.1
@@ -2046,13 +2055,13 @@ __metadata:
   resolution: "dougwade.io@workspace:."
   dependencies:
     "@11ty/eleventy": "npm:^2.0.1"
-    "@tybalt/cli": "npm:^0.1.5"
-    "@tybalt/core": "npm:^0.1.5"
-    "@tybalt/eleventy-plugin": "npm:^0.1.5"
-    "@tybalt/parser": "npm:^0.1.5"
-    "@tybalt/reactive": "npm:^0.1.5"
-    "@tybalt/test-utils": "npm:^0.1.5"
-    "@tybalt/validator": "npm:^0.1.5"
+    "@tybalt/cli": "npm:^0.1.6"
+    "@tybalt/core": "npm:^0.1.6"
+    "@tybalt/eleventy-plugin": "npm:^0.1.6"
+    "@tybalt/parser": "npm:^0.1.6"
+    "@tybalt/reactive": "npm:^0.1.6"
+    "@tybalt/test-utils": "npm:^0.1.6"
+    "@tybalt/validator": "npm:^0.1.6"
     "@types/jest": "npm:^29.5.10"
     classnames: "npm:^2.3.2"
     typescript-plugin-css-modules: "npm:^5.0.2"
