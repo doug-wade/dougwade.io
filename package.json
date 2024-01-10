@@ -28,16 +28,5 @@
     "@types/jest": "^29.5.10",
     "typescript-plugin-css-modules": "^5.0.2"
   },
-  "packageManager": "yarn@4.0.2",
-  "resolutions": {
-    "@tybalt/cli": "portal:/Users/doug/code/tybalt/packages/cli",
-    "@tybalt/core": "portal:/Users/doug/code/tybalt/packages/core",
-    "@tybalt/eleventy-plugin": "portal:/Users/doug/code/tybalt/packages/eleventy-plugin",
-    "@tybalt/esbuild-plugin": "portal:/Users/doug/code/tybalt/packages/esbuild-plugin",
-    "@tybalt/eslint-plugin": "portal:/Users/doug/code/tybalt/packages/eslint-plugin",
-    "@tybalt/parser": "portal:/Users/doug/code/tybalt/packages/parser",
-    "@tybalt/reactive": "portal:/Users/doug/code/tybalt/packages/reactive",
-    "@tybalt/test-utils": "portal:/Users/doug/code/tybalt/packages/test-utils",
-    "@tybalt/validator": "portal:/Users/doug/code/tybalt/packages/validator"
-  }
+  "packageManager": "yarn@4.0.2"
 }
