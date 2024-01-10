@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "eleventy --input=playground.html",
+    "build": "eleventy --input=index.html",
     "test": "tybalt test",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch"
