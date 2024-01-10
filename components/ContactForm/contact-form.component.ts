@@ -1,29 +1,31 @@
 import { defineComponent, html } from '@tybalt/core';
-import { BehaviorSubject } from 'rxjs';
+import { derive, reactive } from '@tybalt/reactive';
+
+import css from './contact-form.css';
 
 export default defineComponent({
     name: 'dbw-contact-form',
-    css: `
-        dbw-button {
-            margin-top: 2em;
-            margin-bottom: 2em;
-        }
-    `,
+    css,
     setup() {
-        const hasSubmitted = new BehaviorSubject(false);
+        const hasSubmitted = reactive(false);
         const clickHandler = () => {
-            hasSubmitted.next(true);
+            hasSubmitted.value = true;
         }
 
-        const subject = new BehaviorSubject({ value: '', valid: false });
-        const email = new BehaviorSubject({ value: '', valid: false });
-        const message = new BehaviorSubject({ value: '', valid: false });
+        const subject = reactive({ value: '', valid: false });
+        const email = reactive({ value: '', valid: false });
+        const message = reactive({ value: '', valid: false });
 
-        const subjectHandler = (evt) => { console.log('evt.detail', evt.detail); subject.next(evt.detail) };
-        const emailHandler = (evt) => email.next(evt.detail);
-        const messageHandler = (evt) => message.next(evt.detail);
+        const subjectHandler = (evt: CustomEvent) => subject.value = evt.detail;
+        const emailHandler = (evt: CustomEvent) => email.value = evt.detail;
+        const messageHandler = (evt: CustomEvent) => message.value = evt.detail;
+
+        const buttonDisabled = derive([subject, email, message], ([s, e, m]) => {
+            return !(s.valid && e.valid && m.valid);
+        });
 
         return {
+            buttonDisabled,
             clickHandler,
             hasSubmitted,
             subjectHandler,
@@ -34,7 +36,8 @@ export default defineComponent({
             message
         }
     },
-    render({ 
+    render({
+        buttonDisabled,
         subject,
         email,
         message, 
@@ -44,12 +47,12 @@ export default defineComponent({
         emailHandler, 
         subjectHandler 
     }) {
-        if (hasSubmitted) {
+        if (hasSubmitted.value) {
             return html`<div>Thanks for contacting me!</div>`;
         }
 
         return html`
-            <form name="contact" netlify>
+            <form class="dbw-contact-form" name="contact" netlify>
                 <dbw-typography variant="h2">
                     Contact Me!
                 </dbw-typography>
@@ -57,7 +60,7 @@ export default defineComponent({
                     required="true" 
                     name="subject" 
                     label="Subject" 
-                    value="${subject.value}" 
+                    value="${subject.value.value}" 
                     @change="${subjectHandler}">
                 </dbw-text-input>
                 <dbw-text-input 
@@ -65,20 +68,20 @@ export default defineComponent({
                     name="email" 
                     type="email" 
                     label="Reply-To" 
-                    value="${email.value}" 
+                    value="${email.value.value}" 
                     @change="${emailHandler}">
                 </dbw-text-input>
                 <dbw-text-area 
                     required="true" 
                     name="message" 
                     label="Message" 
-                    value=${message.value} 
+                    value="${message.value.value}"
                     @change="${messageHandler}">
                 </dbw-text-area>
                 <dbw-button 
                     type="submit" 
                     @click="${clickHandler}"
-                    disabled="${!(subject.valid && email.valid && message.valid)}">
+                    disabled="${buttonDisabled}">
                         Send message
                 </dbw-button>
             </form>

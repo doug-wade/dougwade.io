@@ -2,7 +2,7 @@ import { defineComponent, html } from "@tybalt/core";
 
 const projects = [
     { 
-        name: 'Tybalt',
+        name: 'tybalt',
         url: 'https://github.com/doug-wade/tybalt',
         description: 'A toolkit for writing web components. This site is written using Tybalt! Its a fun project, but you should probably use lit.'
     },
@@ -29,7 +29,7 @@ const projects = [
     {
         name: 'dougwade.io',
         url: 'https://github.com/doug-wade/dougwade.io',
-        description: 'The code for this website, which is written in Tybalt, my open-source web components framework (see above).'
+        description: 'The code for this website, which is written in tybalt, my open-source web components framework (see above).'
     }
 ];
 

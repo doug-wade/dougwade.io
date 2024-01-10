@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy --input=playground.html",
     "test": "tybalt test",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch"
@@ -14,17 +14,30 @@
   "author": "Douglas Wade <douglas.b.wade@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "classnames": "^2.3.2",
-    "@tybalt/core": "^0.1.1",
-    "@tybalt/parser": "^0.1.1",
-    "@tybalt/validator": "^0.1.1"
+    "@tybalt/core": "^0.1.5",
+    "@tybalt/parser": "^0.1.5",
+    "@tybalt/reactive": "^0.1.5",
+    "@tybalt/validator": "^0.1.5",
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@tybalt/cli": "^0.1.1",
-    "@tybalt/eleventy-plugin": "^0.1.1",
-    "@tybalt/test-utils": "^0.1.1",
+    "@tybalt/cli": "^0.1.5",
+    "@tybalt/eleventy-plugin": "^0.1.5",
+    "@tybalt/test-utils": "^0.1.5",
     "@types/jest": "^29.5.10",
     "typescript-plugin-css-modules": "^5.0.2"
+  },
+  "packageManager": "yarn@4.0.2",
+  "resolutions": {
+    "@tybalt/cli": "portal:/Users/doug/code/tybalt/packages/cli",
+    "@tybalt/core": "portal:/Users/doug/code/tybalt/packages/core",
+    "@tybalt/eleventy-plugin": "portal:/Users/doug/code/tybalt/packages/eleventy-plugin",
+    "@tybalt/esbuild-plugin": "portal:/Users/doug/code/tybalt/packages/esbuild-plugin",
+    "@tybalt/eslint-plugin": "portal:/Users/doug/code/tybalt/packages/eslint-plugin",
+    "@tybalt/parser": "portal:/Users/doug/code/tybalt/packages/parser",
+    "@tybalt/reactive": "portal:/Users/doug/code/tybalt/packages/reactive",
+    "@tybalt/test-utils": "portal:/Users/doug/code/tybalt/packages/test-utils",
+    "@tybalt/validator": "portal:/Users/doug/code/tybalt/packages/validator"
   }
 }

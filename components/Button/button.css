@@ -4,6 +4,7 @@
     background-color: var(--color-primary);
     border-radius: 4px;
     border: 1px var(--color-black) solid;
+    width: 100%;
 }
 
 button.btn[disabled="true"] {

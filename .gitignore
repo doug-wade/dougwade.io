@@ -36,3 +36,9 @@ node_modules
 
 # Compiled site
 _site
+
+# Debug template
+debug.html
+
+# yarn cache
+.yarn
