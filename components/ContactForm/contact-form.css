@@ -1,0 +1,13 @@
+.dbw-contact-form {
+    display: flex;
+    flex-direction: column;
+
+    & > dbw-text-input {
+        margin-bottom: .5em;
+    };
+    
+    & > dbw-button {
+        margin-top: .5em;
+        margin-bottom: .5em;
+    };
+}

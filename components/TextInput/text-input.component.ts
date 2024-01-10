@@ -1,7 +1,7 @@
 import { defineComponent, html } from '@tybalt/core';
 import { boolean, compose, oneOf, string, required } from '@tybalt/validator';
 import { string as stringParser } from '@tybalt/parser';
-import { BehaviorSubject } from 'rxjs';
+import { derive, reactive } from "@tybalt/reactive";
 import { v4 as uuid } from 'uuid';
 
 import css from './text-input.css';
@@ -35,35 +35,36 @@ export default defineComponent({
         }
     },
     setup({ required: isRequired, type, value: valueProp }, { emit }) {
-        debugger;
         const id = uuid();
 
-        const validator = compose(...[
+        const validator = compose(
             isRequired.value ? required() : null,
             type.value === 'email' ? emailValidator : null,
             string()
-        ].filter(v => !!v));
+        );
         
         // Only show the error state once the field has been blurred
         // the first time.
         let hasRun = false;
-        const inputClasses = new BehaviorSubject('');
+        const hasBlurredClasses = reactive('');
         const blurHandler = () => {
             if (!hasRun) {
-                inputClasses.next('has-blurred');
+                hasBlurredClasses.value = 'has-blurred';
                 hasRun = true;
             }
         };
 
         // Persist the value of the text input between renders
-        console.log('valueProp.value', valueProp.value);
-        const value = new BehaviorSubject(valueProp.value);
-        const changeHandler = async (evt) => {
+        const validClasses = reactive(isRequired ? 'invalid' : '');
+        const value = reactive(valueProp.value);
+        valueProp.addListener(valuePropUpdate => value.value = valuePropUpdate);
+        const inputHandler = async (evt) => {
             evt.stopPropagation();
 
             const newValue = evt.target?.value;
-            value.next(newValue);
+            value.value = newValue;
             const validationResult = await validator.validate(value.value);
+            validClasses.value = validationResult.passed ? '' : 'invalid';
 
             emit('change', { 
                 value: newValue, 
@@ -71,12 +72,16 @@ export default defineComponent({
             });
         };
 
+        const wrapperClasses = derive([hasBlurredClasses, validClasses], ([h, v]) => {
+            return `${h} ${v}`;
+        });
+
         return {
             blurHandler,
-            changeHandler,
+            inputHandler,
             id,
-            inputClasses,
-            value
+            wrapperClasses,
+            value,
         }
     },
     render({ 
@@ -84,30 +89,27 @@ export default defineComponent({
         label, 
         required, 
         type, 
-        inputClasses, 
+        wrapperClasses, 
         blurHandler, 
-        changeHandler, 
+        inputHandler, 
         value, 
-        id 
+        id
     }) {
         return html`
-            <div>
-                <label for=${id}>
-                    <dbw-typography
-                        tagName="span"
-                        variant="body">
-                            ${label}:
+            <div class="dbw-text-input ${wrapperClasses}">
+                <label for="${id}">
+                    <dbw-typography variant="body">
+                        ${label}:
                     </dbw-typography>
                 </label>
-                <input 
-                    class="${inputClasses}"
+                <input
                     id="${id}"
                     required="${required}" 
                     type="${type}" 
                     name="${name}" 
-                    value="${value}"
+                    value="${value.value}"
                     @blur="${blurHandler}"
-                    @change="${changeHandler}">
+                    @input="${inputHandler}">
                 </input> 
             </div>
         `;

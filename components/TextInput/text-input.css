@@ -1,8 +1,33 @@
 input {
-    width: 100%;
+    width: calc(100% - 1em);
     line-height: 2;
+    border: none;
+    margin-left: .5em;
 
-    &.has-blurred:invalid {
-        border: 1px solid red;
+    &:focus {
+        outline: none;
+        box-shadow: none;
     }
+}
+
+.dbw-text-input {
+    border: 1px solid black;
+    border-radius: .25em;
+
+    &.invalid.has-blurred {
+        border: 0.125em solid red;
+
+        &:focus-within {
+            border: 0.125em solid var(--color-primary);
+        };
+    };
+
+    &:focus-within {
+        border: 0.125em solid var(--color-primary);
+    };
+}
+
+label {
+    display: block;
+    margin-left: .5em;
 }

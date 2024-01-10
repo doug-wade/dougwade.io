@@ -1,6 +1,8 @@
 import { defineComponent, html } from '@tybalt/core';
 import { compose, string, required } from '@tybalt/validator';
-import { BehaviorSubject } from 'rxjs';
+import { string as stringParser } from '@tybalt/parser';
+import { derive, reactive } from "@tybalt/reactive";
+import { v4 as uuid } from 'uuid';
 
 import css from './text-area.css';
 
@@ -20,30 +22,37 @@ export default defineComponent({
         value: {
             default: '',
             validator: string,
+            parser: stringParser
         }
     },
     setup({ required: isRequired, value: valueProp }, { emit }) {
-        const validator = compose(...[
+        const id = uuid();
+
+        const validator = compose(
             isRequired ? required() : null,
             string()
-        ].filter(v => !!v));
+        );
 
         let hasRun = false;
-        const textareaClasses = new BehaviorSubject('');
+        const hasBlurredClasses = reactive('');
         const blurHandler = () => {
             if (!hasRun) {
-                textareaClasses.next('has-blurred');
+                hasBlurredClasses.value = 'has-blurred';
                 hasRun = true;
             }
         };
 
-        const value = new BehaviorSubject(valueProp);
-        const changeHandler = async (evt) => {
+        // Persist the value of the text input between renders
+        const value = reactive(valueProp.value);
+        const validClasses = reactive(isRequired ? 'invalid' : ''); 
+        valueProp.addListener(valuePropUpdate => value.value = valuePropUpdate);
+        const inputHandler = async (evt) => {
             evt.stopPropagation();
 
             const newValue = evt.target?.value;
-            value.next(newValue);
+            value.value = newValue;
             const validationResult = await validator.validate(newValue);
+            validClasses.value = validationResult.passed ? '' : 'invalid';
 
             emit('change', { 
                 value: newValue,
@@ -51,25 +60,31 @@ export default defineComponent({
             });
         }
 
+        const wrapperClasses = derive([hasBlurredClasses, validClasses], ([h, v]) => {
+            return `${h} ${v}`;
+        });
+
         return {
+            id,
             blurHandler,
-            changeHandler,
-            textareaClasses,
+            inputHandler,
+            wrapperClasses,
             value
         }
     },
-    render({ name, label, required, textareaClasses, blurHandler, changeHandler, value }) {
+    render({ name, label, required, wrapperClasses, blurHandler, inputHandler, value, id }) {
         return html`
-            <label>
-                <dbw-typography variant="body">${label}:</dbw-typography>
-                <textarea 
-                    class="${textareaClasses}"
+            <div class="dbw-text-area ${wrapperClasses}">
+                <label for="${id}">
+                    <dbw-typography variant="body">${label}:</dbw-typography>
+                </label>
+                <textarea
+                    id="${id}"
                     required="${required}" 
                     name="${name}"
-                    value="${value}"
                     @blur="${blurHandler}"
-                    @change="${changeHandler}"></textarea> 
-            </label>
+                    @input="${inputHandler}">${value.value}</textarea> 
+            </div>
         `;
     }
 });

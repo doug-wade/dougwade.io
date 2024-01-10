@@ -1,6 +1,6 @@
 import { defineComponent, html } from '@tybalt/core';
 import { oneOf } from '@tybalt/validator';
-import { map } from 'rxjs';
+import { derive } from '@tybalt/reactive';
 
 import css from './typography.css';
 
@@ -43,8 +43,10 @@ export default defineComponent({
     },
     css,
     setup({ variant, tagName }) {
+        const derivedTagName = derive(tagName, ([tag]) => tag || getDefaultTagName(variant.value));
+
         return {
-            tagName: tagName.observable.pipe(map(tag => tag || getDefaultTagName(variant))),
+            tagName: derivedTagName,
             variant
         }
     },
