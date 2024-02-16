@@ -42,3 +42,5 @@ debug.html
 
 # yarn cache
 .yarn
+
+.env
