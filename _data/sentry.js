@@ -5,7 +5,7 @@ const getSentryRelease = () => {
     const pkg = require('../package.json');
     const shasum = child_process.execSync('git rev-parse HEAD').toString().trim();
 
-    return `${pkg.version}@${shasum}`;
+    return `${pkg.name}@${pkg.version}+${shasum}`;
 }
 
 module.exports = function() {
