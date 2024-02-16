@@ -22,6 +22,12 @@
       }
     </style>
     <script crossorigin="anonymous" src="{{sentry.dsn}}"></script>
+    <script>
+      Sentry.init({
+        release: "{{sentry.release}}",
+        environment: "{{sentry.environment}}",
+      });
+    </script>
   </head>
   <body id="body">
     <dbw-header id="header"></dbw-header>
