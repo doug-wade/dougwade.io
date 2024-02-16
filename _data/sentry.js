@@ -11,6 +11,7 @@ const getSentryRelease = () => {
 module.exports = function() {
     return {
         dsn: process.env.SENTRY_DSN || "development",
+        url: process.env.SENTRY_URL || "development",
         release: getSentryRelease(),
         environment: process.env.SENTRY_ENVIRONMENT || "development",
     };
