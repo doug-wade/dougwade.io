@@ -21,11 +21,16 @@
         --color-secondary: #cdb4db;
       }
     </style>
-    <script crossorigin="anonymous" src="{{sentry.dsn}}"></script>
+    <script crossorigin="anonymous" src="{{sentry.url}}"></script>
     <script>
       Sentry.init({
         release: "{{sentry.release}}",
         environment: "{{sentry.environment}}",
+        dsn: "{{sentry.dsn}}",
+        tracesSampleRate: 1.0,
+        tracePropagationTargets: ["localhost", /^https:\/\/dougwade\.io/],
+        replaysSessionSampleRate: 0.1,
+        replaysOnErrorSampleRate: 1.0,
       });
     </script>
   </head>
